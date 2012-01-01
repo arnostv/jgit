@@ -74,11 +74,11 @@ public class GitCommitTask extends Task {
                 commidCmd.setAuthor(RawParseUtils.parsePersonIdent(author));
             }
 
-            Ref head = db.getRef(Constants.HEAD);
+            //Ref head = repo.getRef(Constants.HEAD);
             final RevCommit revCommit = commidCmd.call();
 
-            handleOutput("revCommit " + revCommit);
-            handleOutput("head " + head);
+            //handleOutput("revCommit " + revCommit);
+            //handleOutput("head " + head);
         } catch (Exception e) {
             throw new BuildException("Could not commit files. " + src, e);
         }
